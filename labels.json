@@ -1,0 +1,11 @@
+{
+  "entry_vector": "stolen ssh key",
+  "persistence": "systemd unit",
+  "account": "deploy",
+  "must_cite": [
+    "evidence/bash_history.txt",
+    "evidence/auth_excerpt.log",
+    "evidence/files.txt"
+  ],
+  "note": "noise commands are benign and must not be reported"
+}
