@@ -1,0 +1,13 @@
+[package]
+name = "handlers"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+ingest = { path = "../ingest" }
+wire = { path = "../wire" }
+mq = { path = "../mq" }
+session = { path = "../session" }
+cache = { path = "../cache" }
+rpc = { path = "../rpc" }
+consumer = { path = "../consumer" }

@@ -1,0 +1,578 @@
+{
+ "total": 50,
+ "rules": {
+  "DESER-SESSION-001": {
+   "name": "bincode-session",
+   "shortDescription": "会话反序列化",
+   "help": "会话字节未经长度校验/类型白名单直接 bincode 反序列化。"
+  },
+  "DESER-CACHE-002": {
+   "name": "bincode-cache",
+   "shortDescription": "缓存反序列化",
+   "help": "缓存中的字节直接反序列化成结构体，未做长度或 tag 校验。"
+  },
+  "DESER-RPC-003": {
+   "name": "bincode-rpc",
+   "shortDescription": "RPC 参数解码",
+   "help": "RPC 参数解码直接用 bincode，参数类型未走白名单。"
+  },
+  "DESER-MQ-004": {
+   "name": "bincode-mq",
+   "shortDescription": "消息队列消费",
+   "help": "队列消息 payload 直接反序列化，未校验消息长度与事件类型。"
+  }
+ },
+ "vulns": [
+  {
+   "id": "v01",
+   "sink": "session_deserialization",
+   "label": "会话反序列化",
+   "file": "rust/crates/session/src/lib.rs",
+   "line": 25,
+   "entry": "handle_queue_01",
+   "entry_file": "rust/crates/handlers/src/queue.rs",
+   "source": "queue_message",
+   "severity": "high"
+  },
+  {
+   "id": "v02",
+   "sink": "session_deserialization",
+   "label": "会话反序列化",
+   "file": "rust/crates/session/src/lib.rs",
+   "line": 31,
+   "entry": "handle_queue_02",
+   "entry_file": "rust/crates/handlers/src/queue.rs",
+   "source": "queue_message",
+   "severity": "high"
+  },
+  {
+   "id": "v03",
+   "sink": "session_deserialization",
+   "label": "会话反序列化",
+   "file": "rust/crates/session/src/lib.rs",
+   "line": 37,
+   "entry": "handle_queue_03",
+   "entry_file": "rust/crates/handlers/src/queue.rs",
+   "source": "queue_message",
+   "severity": "high"
+  },
+  {
+   "id": "v04",
+   "sink": "session_deserialization",
+   "label": "会话反序列化",
+   "file": "rust/crates/session/src/lib.rs",
+   "line": 43,
+   "entry": "handle_queue_04",
+   "entry_file": "rust/crates/handlers/src/queue.rs",
+   "source": "queue_message",
+   "severity": "high"
+  },
+  {
+   "id": "v05",
+   "sink": "session_deserialization",
+   "label": "会话反序列化",
+   "file": "rust/crates/session/src/lib.rs",
+   "line": 49,
+   "entry": "handle_queue_05",
+   "entry_file": "rust/crates/handlers/src/queue.rs",
+   "source": "queue_message",
+   "severity": "high"
+  },
+  {
+   "id": "v06",
+   "sink": "session_deserialization",
+   "label": "会话反序列化",
+   "file": "rust/crates/session/src/lib.rs",
+   "line": 55,
+   "entry": "handle_queue_06",
+   "entry_file": "rust/crates/handlers/src/queue.rs",
+   "source": "queue_message",
+   "severity": "high"
+  },
+  {
+   "id": "v07",
+   "sink": "session_deserialization",
+   "label": "会话反序列化",
+   "file": "rust/crates/session/src/lib.rs",
+   "line": 61,
+   "entry": "handle_queue_07",
+   "entry_file": "rust/crates/handlers/src/queue.rs",
+   "source": "queue_message",
+   "severity": "high"
+  },
+  {
+   "id": "v08",
+   "sink": "session_deserialization",
+   "label": "会话反序列化",
+   "file": "rust/crates/session/src/lib.rs",
+   "line": 67,
+   "entry": "handle_queue_08",
+   "entry_file": "rust/crates/handlers/src/queue.rs",
+   "source": "queue_message",
+   "severity": "high"
+  },
+  {
+   "id": "v09",
+   "sink": "session_deserialization",
+   "label": "会话反序列化",
+   "file": "rust/crates/session/src/lib.rs",
+   "line": 73,
+   "entry": "handle_queue_09",
+   "entry_file": "rust/crates/handlers/src/queue.rs",
+   "source": "queue_message",
+   "severity": "high"
+  },
+  {
+   "id": "v10",
+   "sink": "session_deserialization",
+   "label": "会话反序列化",
+   "file": "rust/crates/session/src/lib.rs",
+   "line": 79,
+   "entry": "handle_queue_10",
+   "entry_file": "rust/crates/handlers/src/queue.rs",
+   "source": "queue_message",
+   "severity": "high"
+  },
+  {
+   "id": "v11",
+   "sink": "session_deserialization",
+   "label": "会话反序列化",
+   "file": "rust/crates/session/src/lib.rs",
+   "line": 85,
+   "entry": "handle_queue_11",
+   "entry_file": "rust/crates/handlers/src/queue.rs",
+   "source": "queue_message",
+   "severity": "high"
+  },
+  {
+   "id": "v12",
+   "sink": "session_deserialization",
+   "label": "会话反序列化",
+   "file": "rust/crates/session/src/lib.rs",
+   "line": 91,
+   "entry": "handle_queue_12",
+   "entry_file": "rust/crates/handlers/src/queue.rs",
+   "source": "queue_message",
+   "severity": "high"
+  },
+  {
+   "id": "v13",
+   "sink": "cache_deserialization",
+   "label": "缓存反序列化",
+   "file": "rust/crates/cache/src/lib.rs",
+   "line": 25,
+   "entry": "handle_queue_13",
+   "entry_file": "rust/crates/handlers/src/queue.rs",
+   "source": "queue_message",
+   "severity": "high"
+  },
+  {
+   "id": "v14",
+   "sink": "cache_deserialization",
+   "label": "缓存反序列化",
+   "file": "rust/crates/cache/src/lib.rs",
+   "line": 31,
+   "entry": "handle_queue_14",
+   "entry_file": "rust/crates/handlers/src/queue.rs",
+   "source": "queue_message",
+   "severity": "high"
+  },
+  {
+   "id": "v15",
+   "sink": "cache_deserialization",
+   "label": "缓存反序列化",
+   "file": "rust/crates/cache/src/lib.rs",
+   "line": 37,
+   "entry": "handle_queue_15",
+   "entry_file": "rust/crates/handlers/src/queue.rs",
+   "source": "queue_message",
+   "severity": "high"
+  },
+  {
+   "id": "v16",
+   "sink": "cache_deserialization",
+   "label": "缓存反序列化",
+   "file": "rust/crates/cache/src/lib.rs",
+   "line": 43,
+   "entry": "handle_queue_16",
+   "entry_file": "rust/crates/handlers/src/queue.rs",
+   "source": "queue_message",
+   "severity": "high"
+  },
+  {
+   "id": "v17",
+   "sink": "cache_deserialization",
+   "label": "缓存反序列化",
+   "file": "rust/crates/cache/src/lib.rs",
+   "line": 49,
+   "entry": "handle_queue_17",
+   "entry_file": "rust/crates/handlers/src/queue.rs",
+   "source": "queue_message",
+   "severity": "high"
+  },
+  {
+   "id": "v18",
+   "sink": "cache_deserialization",
+   "label": "缓存反序列化",
+   "file": "rust/crates/cache/src/lib.rs",
+   "line": 55,
+   "entry": "handle_frame_01",
+   "entry_file": "rust/crates/handlers/src/frame.rs",
+   "source": "network_frame",
+   "severity": "high"
+  },
+  {
+   "id": "v19",
+   "sink": "cache_deserialization",
+   "label": "缓存反序列化",
+   "file": "rust/crates/cache/src/lib.rs",
+   "line": 61,
+   "entry": "handle_frame_02",
+   "entry_file": "rust/crates/handlers/src/frame.rs",
+   "source": "network_frame",
+   "severity": "high"
+  },
+  {
+   "id": "v20",
+   "sink": "cache_deserialization",
+   "label": "缓存反序列化",
+   "file": "rust/crates/cache/src/lib.rs",
+   "line": 67,
+   "entry": "handle_frame_03",
+   "entry_file": "rust/crates/handlers/src/frame.rs",
+   "source": "network_frame",
+   "severity": "high"
+  },
+  {
+   "id": "v21",
+   "sink": "cache_deserialization",
+   "label": "缓存反序列化",
+   "file": "rust/crates/cache/src/lib.rs",
+   "line": 73,
+   "entry": "handle_frame_04",
+   "entry_file": "rust/crates/handlers/src/frame.rs",
+   "source": "network_frame",
+   "severity": "high"
+  },
+  {
+   "id": "v22",
+   "sink": "cache_deserialization",
+   "label": "缓存反序列化",
+   "file": "rust/crates/cache/src/lib.rs",
+   "line": 79,
+   "entry": "handle_frame_05",
+   "entry_file": "rust/crates/handlers/src/frame.rs",
+   "source": "network_frame",
+   "severity": "high"
+  },
+  {
+   "id": "v23",
+   "sink": "cache_deserialization",
+   "label": "缓存反序列化",
+   "file": "rust/crates/cache/src/lib.rs",
+   "line": 85,
+   "entry": "handle_frame_06",
+   "entry_file": "rust/crates/handlers/src/frame.rs",
+   "source": "network_frame",
+   "severity": "high"
+  },
+  {
+   "id": "v24",
+   "sink": "cache_deserialization",
+   "label": "缓存反序列化",
+   "file": "rust/crates/cache/src/lib.rs",
+   "line": 91,
+   "entry": "handle_frame_07",
+   "entry_file": "rust/crates/handlers/src/frame.rs",
+   "source": "network_frame",
+   "severity": "high"
+  },
+  {
+   "id": "v25",
+   "sink": "rpc_param_decode",
+   "label": "RPC 参数解码",
+   "file": "rust/crates/rpc/src/lib.rs",
+   "line": 25,
+   "entry": "handle_frame_08",
+   "entry_file": "rust/crates/handlers/src/frame.rs",
+   "source": "network_frame",
+   "severity": "high"
+  },
+  {
+   "id": "v26",
+   "sink": "rpc_param_decode",
+   "label": "RPC 参数解码",
+   "file": "rust/crates/rpc/src/lib.rs",
+   "line": 31,
+   "entry": "handle_frame_09",
+   "entry_file": "rust/crates/handlers/src/frame.rs",
+   "source": "network_frame",
+   "severity": "high"
+  },
+  {
+   "id": "v27",
+   "sink": "rpc_param_decode",
+   "label": "RPC 参数解码",
+   "file": "rust/crates/rpc/src/lib.rs",
+   "line": 37,
+   "entry": "handle_frame_10",
+   "entry_file": "rust/crates/handlers/src/frame.rs",
+   "source": "network_frame",
+   "severity": "high"
+  },
+  {
+   "id": "v28",
+   "sink": "rpc_param_decode",
+   "label": "RPC 参数解码",
+   "file": "rust/crates/rpc/src/lib.rs",
+   "line": 43,
+   "entry": "handle_frame_11",
+   "entry_file": "rust/crates/handlers/src/frame.rs",
+   "source": "network_frame",
+   "severity": "high"
+  },
+  {
+   "id": "v29",
+   "sink": "rpc_param_decode",
+   "label": "RPC 参数解码",
+   "file": "rust/crates/rpc/src/lib.rs",
+   "line": 49,
+   "entry": "handle_frame_12",
+   "entry_file": "rust/crates/handlers/src/frame.rs",
+   "source": "network_frame",
+   "severity": "high"
+  },
+  {
+   "id": "v30",
+   "sink": "rpc_param_decode",
+   "label": "RPC 参数解码",
+   "file": "rust/crates/rpc/src/lib.rs",
+   "line": 55,
+   "entry": "handle_frame_13",
+   "entry_file": "rust/crates/handlers/src/frame.rs",
+   "source": "network_frame",
+   "severity": "high"
+  },
+  {
+   "id": "v31",
+   "sink": "rpc_param_decode",
+   "label": "RPC 参数解码",
+   "file": "rust/crates/rpc/src/lib.rs",
+   "line": 61,
+   "entry": "handle_frame_14",
+   "entry_file": "rust/crates/handlers/src/frame.rs",
+   "source": "network_frame",
+   "severity": "high"
+  },
+  {
+   "id": "v32",
+   "sink": "rpc_param_decode",
+   "label": "RPC 参数解码",
+   "file": "rust/crates/rpc/src/lib.rs",
+   "line": 67,
+   "entry": "handle_frame_15",
+   "entry_file": "rust/crates/handlers/src/frame.rs",
+   "source": "network_frame",
+   "severity": "high"
+  },
+  {
+   "id": "v33",
+   "sink": "rpc_param_decode",
+   "label": "RPC 参数解码",
+   "file": "rust/crates/rpc/src/lib.rs",
+   "line": 73,
+   "entry": "handle_frame_16",
+   "entry_file": "rust/crates/handlers/src/frame.rs",
+   "source": "network_frame",
+   "severity": "high"
+  },
+  {
+   "id": "v34",
+   "sink": "rpc_param_decode",
+   "label": "RPC 参数解码",
+   "file": "rust/crates/rpc/src/lib.rs",
+   "line": 79,
+   "entry": "handle_frame_17",
+   "entry_file": "rust/crates/handlers/src/frame.rs",
+   "source": "network_frame",
+   "severity": "high"
+  },
+  {
+   "id": "v35",
+   "sink": "rpc_param_decode",
+   "label": "RPC 参数解码",
+   "file": "rust/crates/rpc/src/lib.rs",
+   "line": 85,
+   "entry": "handle_file_01",
+   "entry_file": "rust/crates/handlers/src/file.rs",
+   "source": "file",
+   "severity": "high"
+  },
+  {
+   "id": "v36",
+   "sink": "rpc_param_decode",
+   "label": "RPC 参数解码",
+   "file": "rust/crates/rpc/src/lib.rs",
+   "line": 91,
+   "entry": "handle_file_02",
+   "entry_file": "rust/crates/handlers/src/file.rs",
+   "source": "file",
+   "severity": "high"
+  },
+  {
+   "id": "v37",
+   "sink": "rpc_param_decode",
+   "label": "RPC 参数解码",
+   "file": "rust/crates/rpc/src/lib.rs",
+   "line": 97,
+   "entry": "handle_file_03",
+   "entry_file": "rust/crates/handlers/src/file.rs",
+   "source": "file",
+   "severity": "high"
+  },
+  {
+   "id": "v38",
+   "sink": "mq_consume",
+   "label": "消息队列消费",
+   "file": "rust/crates/consumer/src/lib.rs",
+   "line": 25,
+   "entry": "handle_file_04",
+   "entry_file": "rust/crates/handlers/src/file.rs",
+   "source": "file",
+   "severity": "high"
+  },
+  {
+   "id": "v39",
+   "sink": "mq_consume",
+   "label": "消息队列消费",
+   "file": "rust/crates/consumer/src/lib.rs",
+   "line": 31,
+   "entry": "handle_file_05",
+   "entry_file": "rust/crates/handlers/src/file.rs",
+   "source": "file",
+   "severity": "high"
+  },
+  {
+   "id": "v40",
+   "sink": "mq_consume",
+   "label": "消息队列消费",
+   "file": "rust/crates/consumer/src/lib.rs",
+   "line": 37,
+   "entry": "handle_file_06",
+   "entry_file": "rust/crates/handlers/src/file.rs",
+   "source": "file",
+   "severity": "high"
+  },
+  {
+   "id": "v41",
+   "sink": "mq_consume",
+   "label": "消息队列消费",
+   "file": "rust/crates/consumer/src/lib.rs",
+   "line": 43,
+   "entry": "handle_file_07",
+   "entry_file": "rust/crates/handlers/src/file.rs",
+   "source": "file",
+   "severity": "high"
+  },
+  {
+   "id": "v42",
+   "sink": "mq_consume",
+   "label": "消息队列消费",
+   "file": "rust/crates/consumer/src/lib.rs",
+   "line": 49,
+   "entry": "handle_file_08",
+   "entry_file": "rust/crates/handlers/src/file.rs",
+   "source": "file",
+   "severity": "high"
+  },
+  {
+   "id": "v43",
+   "sink": "mq_consume",
+   "label": "消息队列消费",
+   "file": "rust/crates/consumer/src/lib.rs",
+   "line": 55,
+   "entry": "handle_file_09",
+   "entry_file": "rust/crates/handlers/src/file.rs",
+   "source": "file",
+   "severity": "high"
+  },
+  {
+   "id": "v44",
+   "sink": "mq_consume",
+   "label": "消息队列消费",
+   "file": "rust/crates/consumer/src/lib.rs",
+   "line": 61,
+   "entry": "handle_file_10",
+   "entry_file": "rust/crates/handlers/src/file.rs",
+   "source": "file",
+   "severity": "high"
+  },
+  {
+   "id": "v45",
+   "sink": "mq_consume",
+   "label": "消息队列消费",
+   "file": "rust/crates/consumer/src/lib.rs",
+   "line": 67,
+   "entry": "handle_file_11",
+   "entry_file": "rust/crates/handlers/src/file.rs",
+   "source": "file",
+   "severity": "high"
+  },
+  {
+   "id": "v46",
+   "sink": "mq_consume",
+   "label": "消息队列消费",
+   "file": "rust/crates/consumer/src/lib.rs",
+   "line": 73,
+   "entry": "handle_file_12",
+   "entry_file": "rust/crates/handlers/src/file.rs",
+   "source": "file",
+   "severity": "high"
+  },
+  {
+   "id": "v47",
+   "sink": "mq_consume",
+   "label": "消息队列消费",
+   "file": "rust/crates/consumer/src/lib.rs",
+   "line": 79,
+   "entry": "handle_file_13",
+   "entry_file": "rust/crates/handlers/src/file.rs",
+   "source": "file",
+   "severity": "high"
+  },
+  {
+   "id": "v48",
+   "sink": "mq_consume",
+   "label": "消息队列消费",
+   "file": "rust/crates/consumer/src/lib.rs",
+   "line": 85,
+   "entry": "handle_file_14",
+   "entry_file": "rust/crates/handlers/src/file.rs",
+   "source": "file",
+   "severity": "high"
+  },
+  {
+   "id": "v49",
+   "sink": "mq_consume",
+   "label": "消息队列消费",
+   "file": "rust/crates/consumer/src/lib.rs",
+   "line": 91,
+   "entry": "handle_file_15",
+   "entry_file": "rust/crates/handlers/src/file.rs",
+   "source": "file",
+   "severity": "high"
+  },
+  {
+   "id": "v50",
+   "sink": "mq_consume",
+   "label": "消息队列消费",
+   "file": "rust/crates/consumer/src/lib.rs",
+   "line": 97,
+   "entry": "handle_file_16",
+   "entry_file": "rust/crates/handlers/src/file.rs",
+   "source": "file",
+   "severity": "high"
+  }
+ ],
+ "note": "各 crate 里 *_checked 结尾的方法先做长度/类型/HMAC 校验再调用同一个 bincode sink，是 decoy；handlers 经 ingest::ByteSource trait object 收帧，源类型在 handlers 的 queue/frame/file 三个模块里。"
+}
