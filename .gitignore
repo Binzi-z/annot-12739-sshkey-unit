@@ -4,3 +4,5 @@ __pycache__/
 findings.json
 findings.sarif
 target/
+.cache/
+*.log
